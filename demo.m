@@ -18,7 +18,8 @@ trainData = [1 1 0 1 1;
 
 C = 3;   % number of clusters
 r = 0.7; %‫‪ vigilance‬‬ ‫‪parameter‬‬
-[W, T] = trainART1(trainData, C, r);
+fast_learning = 1;
+[W, T] = trainART1(trainData, C, r, fast_learning);
 
 testData = trainData(:,4:5);
 resultCluster = testART1(testData, W, T, r);
