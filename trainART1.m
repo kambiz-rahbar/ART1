@@ -20,8 +20,8 @@ for n = 1:N
     X_new = W'*X;
     [~, j] = max(X_new);
     while(1)
-        S = X'*T(:,j) / sum(X);
-        if (S > r || j == C)   % data belongs to the existing cluster
+        S = X'*T(:,j) / sum(X); % measure similarity
+        if (S > r || j == C)    % data belongs to the existing cluster
             break;
         else
             j = j+1; % make a new cluster
